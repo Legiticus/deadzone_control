@@ -108,11 +108,14 @@ export class TowerTile {
 		let selLamp = document.createElement("option");
 		selLamp.value = "orange";
 		selLamp.innerHTML = "Lamp";
+		let selPurple = document.createElement("option");
+		selPurple.value = "purple";
+		selPurple.innerHTML = "Purple";
 		let selNone = document.createElement("option");
 		selNone.value = "none";
 		selNone.innerHTML = "None";
 
-		colorSelect.append(selRed, selGreen, selBlue, selLamp, selNone);
+		colorSelect.append(selRed, selGreen, selBlue, selLamp, selPurple, selNone);
 
 		colorDiv.append(colorLabel);
 		colorDiv.append(colorSelect);
