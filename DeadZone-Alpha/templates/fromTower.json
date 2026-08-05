@@ -1,0 +1,9 @@
+{
+  "type": "init",
+  "device": "tower",
+  "id": 1,
+  "settings": {
+    "color": 16711680,
+    "transition": "instant"
+  }
+}

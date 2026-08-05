@@ -1,0 +1,52 @@
+{
+  "type": "init",
+  "device": "dashboard",
+  "tower1": {
+    "color": 16711680,
+    "transition": "fade"
+  },
+  "tower2": {
+    "color": 16711680,
+    "transition": "fade"
+  },
+  "tower3": {
+    "color": 16711680,
+    "transition": "fade"
+  },
+  "tower4": {
+    "color": 16711680,
+    "transition": "fade"
+  },
+  "tower5": {
+    "color": 16711680,
+    "transition": "fade"
+  },
+  "tower6": {
+    "color": 16711680,
+    "transition": "fade"
+  },
+  "tower7": {
+    "color": 16711680,
+    "transition": "fade"
+  },
+  "tower8": {
+    "color": 16711680,
+    "transition": "fade"
+  },
+  "tower9": {
+    "color": 16711680,
+    "transition": "fade"
+  },
+  "tower10": {
+    "color": 16711680,
+    "transition": "fade"
+  },
+  "tower11": {
+    "color": 16711680,
+    "transition": "fade"
+  },
+  "tower12": {
+    "color": 16711680,
+    "transition": "fade"
+  }
+}

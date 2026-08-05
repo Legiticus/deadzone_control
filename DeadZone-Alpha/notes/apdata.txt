@@ -1,0 +1,8 @@
+admin
+zonealpha1
+
+eap ip: 192.168.0.254
+pc ip: 192.168.0.100
+
+Dead Zone
+dawnwalker7
