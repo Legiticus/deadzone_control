@@ -1,2 +1,0 @@
-1: long range prototype, irfz44n mosfets
-2: short range prototype, irlz34n mosfets

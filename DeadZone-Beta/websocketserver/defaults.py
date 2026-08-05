@@ -1,5 +1,0 @@
-DEFAULT_COLOR = "none"
-DEFAULT_TRANSITION = "instant"
-DEFAULT_STATUS = "disabled"
-DEFAULT_EFFECT = "solid"
-DEFAULT_SIGNAL = -999
