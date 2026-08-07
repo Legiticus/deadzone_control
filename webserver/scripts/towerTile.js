@@ -25,7 +25,7 @@ export class TowerTile {
 
 		//Title
 		let title = document.createElement("h3");
-		title.className = "titleid";
+		title.className = "tileid";
 		title.innerHTML = " " + id;
 		this._element.append(title);
 
@@ -108,14 +108,11 @@ export class TowerTile {
 		let selLamp = document.createElement("option");
 		selLamp.value = "orange";
 		selLamp.innerHTML = "Lamp";
-		let selPurple = document.createElement("option");
-		selPurple.value = "purple";
-		selPurple.innerHTML = "Purple";
 		let selNone = document.createElement("option");
 		selNone.value = "none";
 		selNone.innerHTML = "None";
 
-		colorSelect.append(selRed, selGreen, selBlue, selLamp, selPurple, selNone);
+		colorSelect.append(selRed, selGreen, selBlue, selLamp, selNone);
 
 		colorDiv.append(colorLabel);
 		colorDiv.append(colorSelect);
@@ -208,7 +205,7 @@ export class TowerTile {
 
 	}
 
-	//Takes the given arguments and updates the local tower info and applies the changes to the screen (ecept the labels)
+	//Takes the given arguments and updates the local tower info and applies the changes to the screen (except the labels)
 	configureNS(status, signal, color, transition, effect) {
 
 		this._status = status;
@@ -278,7 +275,7 @@ export class TowerTile {
 	setStatus(status) {
 		this._status = status;
 
-		let titleID = this._element.querySelector(".titleid");
+		let titleID = this._element.querySelector(".tileid");
 		let connectionLabel = this._element.querySelector(".connectionlabel");
 		connectionLabel.innerHTML = "Status: " + this._status;
 

@@ -19,6 +19,11 @@ class MasterFile:
 	
 	def export(self):
 		return json.dumps(self.doc)
+	
+	def exportInitFile(self):
+		initDoc = self.doc
+		initDoc["type"] = "masterFile"
+		return json.dumps(initDoc)
 
 	def exportTower(self, id):
 		towerSection = self.doc["tower" + str(id)]

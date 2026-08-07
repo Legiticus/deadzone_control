@@ -45,11 +45,11 @@ main section {
 }
 
 main section#towerdisplay {
-    width: 70%;
+    width: 65%;
 }
 
 main section#console {
-    width: 30%;
+    width: 35%;
     background-color: black;
 }
 

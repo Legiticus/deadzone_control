@@ -42,13 +42,13 @@ function connectSocket() {
 	};
 
 	websocket.onmessage = function (e) {
-		console.log('Message:', e.data);
+		//console.log('Message:', e.data);
 	};
 
 	websocket.onclose = function (e) {
 		console.log('Socket is closed. Reconnect will be attempted in 1 second.', e.reason);
 		setTimeout(function () {
-			connect();
+			connectSocket();
 		}, 1000);
 	};
 
@@ -84,12 +84,20 @@ function receiveData(websocket) {
 	websocket.addEventListener("message", ({ data }) => {
 		console.log(data);
 		const event = JSON.parse(data);
-		if (event["type"] == "masterFile") {
+		if (event["type"] == "initFile") {
 			masterFile.loadFile(event);
 			for (var i = 1; i <= TOWERCOUNT; i++) {
 				let tower = TOWERS[i - 1];
 				let towerSection = event["tower" + i];
 				tower.configure(towerSection["status"], towerSection["signal"], towerSection["color"], towerSection["transition"], towerSection["effect"]);
+				masterFile.updateTower(tower);
+			}
+		} else if (event["type"] == "masterFile") {
+			masterFile.loadFile(event);
+			for (var i = 1; i <= TOWERCOUNT; i++) {
+				let tower = TOWERS[i - 1];
+				let towerSection = event["tower" + i];
+				tower.configureNS(towerSection["status"], towerSection["signal"], towerSection["color"], towerSection["transition"], towerSection["effect"]);
 				masterFile.updateTower(tower);
 			}
 		} else if (event["type"] == "towerfile") {
@@ -119,14 +127,4 @@ function handleButtonClick(button, websocket) {
 	}
 
 	websocket.send(masterFile.export());
-}
-
-async function reconnectSocket(websocket) {
-	if (websocket.readyState == WebSocket.OPEN) {
-		console.log("websocket connected");
-		return websocket;
-	} else {
-		const newWebsocket = new WebSocket("ws://192.168.0.100:8001");
-		setTimeout(reconnectSocket, 3000, newWebsocket);
-	}
 }

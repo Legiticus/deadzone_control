@@ -1,6 +1,6 @@
 /*
   Author: Levi Smith
-  Version: Beta
+  Version: Beta v1.1
   Date: 08/04/2025
 */
 
@@ -11,7 +11,7 @@
 #include "Color.h"
 
 #define STRINGIFY(x) #x
-#define ID 2
+#define ID 9
 
 #define RPIN 14
 #define GPIN 12
@@ -139,14 +139,12 @@ void loop() {
   //runs every 5 seconds
   if (curMillis - prevMillis >= 5000) {
 
-    Serial.println("still running...");
     prevMillis = curMillis;
 
     sendSignalData();
 
     //check if the wifi has disconnected, and attempt a reconnect
     if (WiFi.status() != WL_CONNECTED) {
-      Serial.println("Reconnecting to WiFi...");
       WiFi.reconnect();
     }
 
@@ -175,6 +173,9 @@ void webSocketEvent(WStype_t type, uint8_t *payload, size_t length) {
       writeColor(lightColor);
       transition = recvFile["transition"].as<String>();
       effect = recvFile["effect"].as<String>();
+      if (effect == "blink" || effect == "pulse") {
+        lightOscillator.reset();
+      }
     }else if (recvFile["type"].as<String>() == "error") {
       websocket.setReconnectInterval(0);
       Serial.println(recvFile["error"].as<String>());

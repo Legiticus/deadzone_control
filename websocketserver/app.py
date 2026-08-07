@@ -1,6 +1,6 @@
 """
     Author: Levi Smith
-    Version: 3.0
+    Version: Alpha
     Date: 07/10/2025
 """
 
@@ -108,7 +108,7 @@ async def handler(websocket):
 
 			#On connection, send the dashboard the masterfile
 			print("updating dashboard")
-			await dashboard.getSocket().send(master.export())
+			await dashboard.getSocket().send(master.exportInitFile())
 			await dashboardHandler(dashboard)
 
 
