@@ -1,6 +1,6 @@
 """
     Author: Levi Smith
-    Version: Alpha
+    Version: 3.0
     Date: 07/10/2025
 """
 
