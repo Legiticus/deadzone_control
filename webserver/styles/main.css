@@ -99,6 +99,10 @@ main div.tower button, main div.tower select {
     width: 100%;
 }
 
+main div.tower button {
+    height: 200%;
+}
+
 
 /* ----------FOOTER---------- */
 footer {
