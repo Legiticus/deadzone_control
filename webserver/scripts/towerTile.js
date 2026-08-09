@@ -357,4 +357,12 @@ export class TowerTile {
 		this.updateTowerData();
 	}
 
+
+
+	// Just sets the color selector
+	setColorSelector(color) {
+		let colorSelect = this._element.querySelector(".colorselect");
+		colorSelect.value = color;
+	}
+
 }
