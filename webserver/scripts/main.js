@@ -126,5 +126,19 @@ function handleButtonClick(button, websocket) {
 		masterFile.updateTower(tower);
 	}
 
+	// SHOULD BE REPLACED IN FUTURE VERSIONS BUT WORKS AS QUICK FIX
+	else if (button.className == "updatecolorall") {
+		color = button.id;
+		//check for valid color
+		if (["red", "green", "blue", "orange", "purple", "none"].includes(color)) {
+			console.log("ERROR: \"" + color + "\" is not a valid color!")
+		}else {
+			for (let i = 0; i < TOWERCOUNT; i++) {
+				let tower = TOWERS[i];
+				tower.setColor(color);
+			}
+		}
+	}
+
 	websocket.send(masterFile.export());
 }
