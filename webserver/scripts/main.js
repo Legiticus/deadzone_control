@@ -128,7 +128,7 @@ function handleButtonClick(button, websocket) {
 
 	// SHOULD BE REPLACED IN FUTURE VERSIONS BUT WORKS AS QUICK FIX
 	else if (button.className == "updatecolorall") {
-		color = button.id.replace("updateall", "").replace("button", "");
+		let color = button.id.replace("updateall", "").replace("button", "");
 		//check for valid color
 		if (["red", "green", "blue", "orange", "purple", "none"].includes(color)) {
 			console.log("ERROR: \"" + color + "\" is not a valid color!")
