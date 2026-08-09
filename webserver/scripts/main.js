@@ -128,11 +128,12 @@ function handleButtonClick(button, websocket) {
 
 	// SHOULD BE REPLACED IN FUTURE VERSIONS BUT WORKS AS QUICK FIX
 	else if (button.className == "updatecolorall") {
-		color = button.id;
+		color = button.id.replace("updateall", "").replace("button", "");
 		//check for valid color
 		if (["red", "green", "blue", "orange", "purple", "none"].includes(color)) {
 			console.log("ERROR: \"" + color + "\" is not a valid color!")
 		}else {
+			console.log("updating towers to \"" + color + "\"");
 			for (let i = 0; i < TOWERCOUNT; i++) {
 				let tower = TOWERS[i];
 				tower.setColor(color);
